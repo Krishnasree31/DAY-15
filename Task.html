@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartTech Responsive Landing Page</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        
+        header {
+            background: #172554;
+            color: white;
+            padding: 18px 8%;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            color: #93c5fd;
+        }
+
+        .header-btn {
+            background: #2563eb;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 70px 8%;
+            background: #dbeafe;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 42px;
+            color: #172554;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        
+        .features {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .features h2,
+        .testimonials h2 {
+            font-size: 32px;
+            color: #172554;
+            margin-bottom: 35px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        
+        .testimonials {
+            background: #dbeafe;
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .testimonial-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            flex: 1 1 250px;
+            max-width: 350px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .testimonial-card h4 {
+            color: #2563eb;
+            margin-top: 15px;
+        }
+
+        
+        footer {
+            background: #172554;
+            color: white;
+            padding: 40px 8% 20px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        .footer-box {
+            flex: 1 1 200px;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-box ul {
+            list-style: none;
+        }
+
+        .footer-box a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-box li {
+            margin-bottom: 8px;
+        }
+
+        .footer-box a:hover {
+            color: #93c5fd;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #475569;
+            padding-top: 20px;
+        }
+
+        
+        @media (max-width: 900px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            .navbar {
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                padding: 50px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navbar ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 6%;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonial-card {
+                width: 100%;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">SmartTech</div>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="header-btn">Get Started</a>
+
+        </nav>
+    </header>
+
+    
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Welcome to SmartTech</h1>
+
+            <p>
+                Discover innovative technology and smart solutions
+                to make your life easier. Experience a better digital
+                world with our modern services.
+            </p>
+
+            <a href="#features" class="hero-btn">Explore More</a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=900"
+                alt="Modern laptop and workspace">
+
+        </div>
+
+    </section>
+
+    
+    <section class="features" id="features">
+
+        <h2>Our Features</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Easy to Use</h3>
+                <p>Simple and user-friendly design for everyone.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Responsive Design</h3>
+                <p>Works perfectly on mobile, tablet and desktop.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Fast Performance</h3>
+                <p>Enjoy fast loading and smooth performance.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Secure Platform</h3>
+                <p>Your information is protected with security features.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Modern Technology</h3>
+                <p>Built using modern web development technologies.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>24/7 Support</h3>
+                <p>Get assistance whenever you need help.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+   
+    <section class="testimonials" id="testimonials">
+
+        <h2>What Our Customers Say</h2>
+
+        <div class="testimonial-container">
+
+            <div class="testimonial-card">
+                <p>
+                    "Amazing design and very easy to use.
+                    I really enjoyed the experience."
+                </p>
+                <h4>- Sree</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    "The website works perfectly on my mobile.
+                    Very clean and attractive design."
+                </p>
+                <h4>- Krishna</h4>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    "Excellent performance and great customer
+                    experience. Highly recommended."
+                </p>
+                <h4>- Chaitanya</h4>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <footer id="contact">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <h3>SmartTech</h3>
+                <p>
+                    Providing smart technology solutions
+                    for a better digital future.
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box">
+                <h3>Contact Us</h3>
+                <p>Email: support@smarttech.com</p>
+                <p>Phone: +91 8492074563</p>
+                <p>Location: India</p>
+            </div>
+
+            <div class="footer-box">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 SmartTech. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
